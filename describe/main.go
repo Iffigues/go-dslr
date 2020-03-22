@@ -16,8 +16,7 @@ func main() {
 	}
 
 	// Get CSV file contents
-	if a, err := csvs.GetCsv(os.Args[1]); err == nil {
-		fmt.Println(a.Names,"\n\n\n\n" ,a.Data)
+	if _, err := csvs.GetCsv(os.Args[1]); err == nil {
 	} else {
 		fmt.Println(err)
 	}
