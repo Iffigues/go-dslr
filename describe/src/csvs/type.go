@@ -1,8 +1,24 @@
 package csvs
 
+type one-hot struct {
+	name string
+	one [4]float64
+}
+
 type Data struct {
 	names []string
 	data  [][]string
+	feat  []*Features
+}
+
+type Feat struct {
+	err   error
+	value float64
+}
+
+type Features struct {
+	Name string
+	Data []feat
 }
 
 func (v *Data) GetValues(f string) (b []string) {

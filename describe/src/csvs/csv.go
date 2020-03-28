@@ -16,7 +16,12 @@ func GetCsv(f string) (d *Data, err error) {
 		return
 	}
 	d = new(Data)
+	d.feat = new(Features)
 	d.names = end[0]
 	d.data = end[1:]
 	return
+}
+
+func (d *Data) Makefeature() {
+
 }
