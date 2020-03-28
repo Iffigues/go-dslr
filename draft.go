@@ -11,7 +11,6 @@ type Meta struct {
 	Theta_init  [] float64
 	Epsilon     float64
 	Seuil       float64
-	L           Data
 }
 
 
