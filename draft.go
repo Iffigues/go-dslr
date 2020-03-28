@@ -11,6 +11,7 @@ type Meta struct {
 	Theta_init  [] float64
 	Epsilon     float64
 	Seuil       float64
+	L           Data
 }
 
 
@@ -25,7 +26,7 @@ func (d Meta) Grad_theta_feature(theta, X, Y [] float64) (res float64) {
 
 	res = 0
 	for i := 0; i <= d.L.Size-1; i++ {
-		res = d.tab_scalar( d.tab_elem_prod( d.L.X[i,j], Y[i] ), d.tab_add( d.logistic(theta,d.L.X[i]), d.tab_neg(Y[i]) )  )
+		res = res + d.tab_scalar( d.tab_elem_prod( d.L.X[i,j], Y[i] ), d.tab_add( d.logistic(theta,d.L.X[i]), d.tab_neg(Y[i]) )  )
 	}
 	return (1.0 / float64(d.L.Size) * res
 
