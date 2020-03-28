@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func GetCsv(f string)(d *Data, err error) {
+func GetCsv(f string) (d *Data, err error) {
 	file, err := os.Open(f)
 	if err != nil {
 		return
