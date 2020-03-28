@@ -1,4 +1,20 @@
 
+package data
+
+import (
+	"errors"
+	"math"
+)
+
+
+type Meta struct {
+	Theta_init  [] float64
+	Epsilon     float64
+	Seuil       float64
+	L           Data
+}
+
+
 func (d Meta) logistic(theta, x [] float64) (result float64) {
 	prod = tab_prod(theta, x)
 	log = 1. / (1. + math.Exp(-prod))
@@ -36,7 +52,7 @@ func (d Meta) Train() (theta, X, Y [] float64) {
 		bool := True
 		
 		for j := 0; j <= d.theta.Size-1; j++ {
-			bool = (diff[j] <= d.Seuil) && bool
+			bool = ( (diff[j] <= d.Seuil) && (bool) )
 		}
 
 		if bool {
@@ -49,6 +65,7 @@ func (d Meta) Train() (theta, X, Y [] float64) {
 	}
 	return
 }
+
 
 #############
 ### Specs ###
