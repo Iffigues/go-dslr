@@ -1,8 +1,8 @@
 package csvs
 
-type one-hot struct {
+type oneHot struct {
 	name string
-	one [4]float64
+	one  [4]float64
 }
 
 type Data struct {
@@ -18,7 +18,7 @@ type Feat struct {
 
 type Features struct {
 	Name string
-	Data []feat
+	Data []Feat
 }
 
 func (v *Data) GetValues(f string) (b []string) {
