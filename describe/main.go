@@ -16,7 +16,9 @@ func main() {
 	}
 
 	// Get CSV file contents
-	if _, err := csvs.GetCsv(os.Args[1]); err == nil {
+	if a, err := csvs.GetCsv(os.Args[1]); err == nil {
+		g := a.GetNewFeat(7)
+		fmt.Println(g)
 	} else {
 		fmt.Println(err)
 	}
